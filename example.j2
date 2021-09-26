@@ -1,0 +1,19 @@
+{{ ansible_managed}}
+
+This host is: {{ ansible_hostname}}
+it's IP is {{ ansible_all_ipv4_addresses}}
+the os is {{ ansible_os_family}}
+
+playbook variable: {{ var1 }}
+
+Total Mem: {{ ansible_memtotal_mb }}
+{% if ansible_memtotal_mb > 1000 %}
+Memory is LARGE
+{% else %}
+memory is SMALL
+{% endif %}
+
+{% for host in groups['rhel'] %}
+{{ hostvars[host]['ansible_facts']['eth1']['ipv4']['address'] }} {{  hostvars[host]['ansible_facts']['hostname'] }}
+{% endfor %}
+

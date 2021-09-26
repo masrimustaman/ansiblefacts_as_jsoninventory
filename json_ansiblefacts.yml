@@ -1,0 +1,11 @@
+---
+  - hosts: master, rhel
+    tasks:
+    - file:
+        path: /tmp/out/
+        state: directory
+      delegate_to: localhost
+    - copy:
+        content: "{{ ansible_facts | combine(ansible_facts) | to_nice_json }}"
+        dest: /tmp/out/{{ inventory_hostname }}.json
+      delegate_to: localhost

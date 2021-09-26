@@ -1,0 +1,9 @@
+[master]
+localhost connection=local
+
+[rhel]
+client01
+client03
+
+[windows]
+client02

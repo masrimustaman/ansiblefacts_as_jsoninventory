@@ -1,0 +1,7 @@
+THIS FILE IS MANAGED BY ANSIBLE
+
+This host is: master
+it's IP is ['10.0.2.15', '10.0.0.11']
+the os is RedHat
+
+playbook variable: Hello World master

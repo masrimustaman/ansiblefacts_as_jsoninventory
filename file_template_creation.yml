@@ -1,0 +1,10 @@
+---
+- name: template file creation
+  hosts: master, rhel
+  vars:
+    - var1: Hello World {{ inventory_hostname }}
+  tasks:
+     - template: 
+         src: example.j2
+         dest: /tmp/{{ inventory_hostname }}.txt
+       delegate_to: localhost

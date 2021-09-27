@@ -6,6 +6,6 @@
         state: directory
       delegate_to: localhost
     - copy:
-        content: "{{ ansible_facts | combine(ansible_facts) | to_nice_json }}"
+        content: "{{ ansible_facts | to_nice_json }}"
         dest: /tmp/out/{{ inventory_hostname }}.json
       delegate_to: localhost

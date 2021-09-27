@@ -12,4 +12,4 @@
 
     # Simply printing the value of fact
     - debug:
-        msg: "{{ ansible_hostname }}   {{ansible_fqdn}}   {{ansible_all_ipv4_addresses[1]}}   ansible_uptime_seconds"
+        msg: "Name:{{ ansible_hostname }}   OSFam:{{ ansible_os_family }}   DefIP:{{ansible_all_ipv4_addresses[1]}}   RamMB:{{ ansible_memtotal_mb }}   vCPU:{{ ansible_processor_vcpus }}"

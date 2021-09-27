@@ -7,23 +7,9 @@
     # display the variable data type
     - debug:
         msg: 
-          - " Data type of 'ansible_architecture'  is {{ ansible_architecture | type_debug }} "
-          - " Data type of 'ansible_apparmor' is {{ ansible_apparmor | type_debug }} "
+          - " Data type of 'ansible_hostname'  is {{ ansible_hostname | type_debug }} "
           - " Data type of 'ansible_all_ipv4_addresses' is {{ ansible_all_ipv4_addresses | type_debug }} "
 
-    # Simply printing the value of fact which is Ansible UnSafe Text type
+    # Simply printing the value of fact
     - debug:
-        msg: "{{ ansible_hostname }}"
-
-
-    # Accessing an element of dictionary
-    - debug:
-        msg: "{{ansible_fqdn}}"
-
-    # Accessing the list
-    - debug:
-        msg: "{{ansible_all_ipv4_addresses}}"
-
-    # Accessing the Second Element of the list
-    - debug:
-        msg: "{{ansible_all_ipv4_addresses[1]}}"
+        msg: "{{ ansible_hostname }}   {{ansible_fqdn}}   {{ansible_all_ipv4_addresses[1]}}   ansible_uptime_seconds"
